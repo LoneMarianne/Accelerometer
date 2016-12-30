@@ -11,10 +11,13 @@ document.addEventListener("deviceready", onDeviceReady, false);
 }
 
 function onDeviceReady() {
+document.getElementById("test").innerHTML = "onDeviceReady() ";
 startWatch();
+
 }
 
 function startWatch() {
+document.getElementById("test").innerHTML+= "startWatch() ";
 var options = { frequency: 1000 };
 watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 }
@@ -45,8 +48,10 @@ alert('onError!');
 
 <body onload="onLoad()">
 <div id="accelerometer">Waiting for accelerometer...</div>
+<div id="test"></div>
 <button onclick="startWatch();">Start Watching</button>
 <button onclick="stopWatch();">Stop Watching</button>
+	<br><a href = "kompas.html"> Er du god til den lille tabel? </a>
 <script type="text/javascript" src="cordova.js"></script>
 </body>
 </html>
