@@ -5,7 +5,9 @@ function onLoad(){
 }
 
 function onDeviceReady() {
+ document.getElementById("test").innerHTML = " OK";
  startWatch();
+ 
 }
 
 function startWatch() {
@@ -13,6 +15,7 @@ function startWatch() {
  watchID = navigator.compass.watchHeading(onSuccess, onError, options);
 }
 function onSuccess(heading) {
+	document.getElementById("test").innerHTML = " onSuccess";
     var element = document.getElementById('heading');
     element.innerHTML = 'Heading: ' + heading.magneticHeading;
 };
