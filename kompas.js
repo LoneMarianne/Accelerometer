@@ -11,6 +11,7 @@ function onDeviceReady() {
 }
 
 function startWatch() {
+	 document.getElementById("test").innerHTML = " start";
  var options = { frequency: 1000 };
  watchID = navigator.compass.watchHeading(onSuccess, onError, options);
 }
