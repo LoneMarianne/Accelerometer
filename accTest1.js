@@ -1,3 +1,10 @@
+// kode hentet her: https://phonegappro.com/tutorials/phonegap-accelerometer-tutorial-device-motion/
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(navigator.accelerometer);
+}
+
 function onSuccess(acceleration) {
     alert('Acceleration X: ' + acceleration.x + '\n' +
           'Acceleration Y: ' + acceleration.y + '\n' +
@@ -9,9 +16,6 @@ function onError() {
     alert('onError!');
 }
 
-var options = { frequency: 1000 };  // Update every 3 seconds
+var options = { frequency: 3000 };  // Update every 3 seconds
 
-function onLoad(){
- watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-}
-var watchID=null;
+var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
