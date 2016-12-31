@@ -5,8 +5,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
 }
 
 function onDeviceReady() {
-	document.documentElement.requestFullScreen();
-    screen.orientation.lock("portrait-primary");
 	startWatch();
 }
 
