@@ -1,7 +1,7 @@
 var watchID = null;
 
 function onLoad(){
-document.addEventListener("deviceready", onDeviceReady, false);
+	document.addEventListener("deviceready", onDeviceReady, false);
 }
 
 function onDeviceReady() {
@@ -9,7 +9,7 @@ function onDeviceReady() {
 }
 
 function startWatch() {
-	var options = { frequency: 1000 };
+	var options = { frequency: 1000 };//vis værdi hvert sekund
 	watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 }
 
@@ -21,12 +21,17 @@ function stopWatch() {
 }
 
 function onSuccess(acceleration) {
+	//Gem sensorværdier
+	var accX = acceleration.x ;
+	var accY = acceleration.y;
+	var accZ = acceleration.z;
+	var timestamp = acceleration.timestamp:
 	var element = document.getElementById('accelerometer');
-
-	element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
-	'Acceleration Y: ' + acceleration.y + '<br />' +
-	'Acceleration Z: ' + acceleration.z + '<br />' +
-	'Timestamp: ' + acceleration.timestamp + '<br />';
+	//Udskriv værdier i div med navnet accelerometer
+	document.getElementById('accelerometer').innerHTML = 'Acceleration X: ' + acc + '<br />' +
+	'Acceleration Y: ' + accY + '<br />' +
+	'Acceleration Z: ' + accZ + '<br />' +
+	'Timestamp: ' + timestamp + '<br />';
 }
 
 function onError() {
