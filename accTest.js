@@ -25,8 +25,7 @@ function onSuccess(acceleration) {
 	var accX = acceleration.x ;
 	var accY = acceleration.y;
 	var accZ = acceleration.z;
-	var timestamp = acceleration.timestamp:
-	var element = document.getElementById('accelerometer');
+	var timestamp = acceleration.timestamp;
 	//Udskriv værdier i div med navnet accelerometer
 	document.getElementById('accelerometer').innerHTML = 'Acceleration X: ' + acc + '<br />' +
 	'Acceleration Y: ' + accY + '<br />' +
